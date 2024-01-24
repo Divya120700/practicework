@@ -15,8 +15,8 @@ pipeline {
                     sh "docker build -t docker-image:latest ."
                 }
                 script {
-                    // Run the container in detached mode, and publish port 8057
-                    sh "docker run -d -p 8057:80 --name my-container docker-image:latest"
+                    // Run the container in detached mode, and publish port 8071
+                    sh "docker run -d -p 8071:80 --name my-container docker-image:latest"
                 }
             }
         }
@@ -28,7 +28,7 @@ pipeline {
                     sh 'sleep 20'
 
                     // Use localhost since Jenkins and the Docker container are likely on the same machine
-                    sh "curl http://10.196.153.137:8057"
+                    sh "curl http://10.196.154.184:8071"
                 }
             }
         }
