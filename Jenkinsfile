@@ -15,7 +15,7 @@ pipeline {
                     sh "docker build . -t  docker-image:latest"
                 }
                 script {
-                    sh "docker run -d -p 8088:80 docker-image:latest"
+                    sh "docker run -d -p 8090:80 docker-image:latest"
                     }
                 }
             
@@ -26,7 +26,7 @@ pipeline {
          {
          script
          {
-             sh "curl http:// 10.196.153.137:8088"
+             sh "curl http:// 10.196.153.137:8090"
          }
      }
 }
