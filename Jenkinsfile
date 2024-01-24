@@ -26,6 +26,7 @@ pipeline {
          {
          script
          {
+             sh 'sleep 10'
              sh "curl http:// 10.196.153.137:8090"
          }
      }
